@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { FormInput , Button} from "../../components"
-import { createAuthUserWithEmailAndPassword } from "../../utils/firebase"
+import { Button, FormInput } from "../../components"
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase"
 import './SignUpForm.styles.scss'
 
 const SignUpForm = () => {
@@ -15,6 +15,7 @@ const SignUpForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields)
 
     const { dislpayName, email, password, confirmPassword } = formFields
+
 
     const handleChange = (event) => {
         const { name, value } = event.target
@@ -31,7 +32,8 @@ const SignUpForm = () => {
             return
         }
         try {
-            const response = await createAuthUserWithEmailAndPassword(email, password)
+            const { user } = await createAuthUserWithEmailAndPassword(email, password)
+            await createUserDocumentFromAuth(user, { dislpayName })
             resetFormFields()
         } catch (err) {
             if (err.code === 'auth/email-already-in-use') {
