@@ -1,4 +1,5 @@
 export { default as Authentication } from "./authentication/Authentication"
+export { default as CategoriesPreview } from "./categories-preview/CategoriesPreview"
 export { default as Checkout } from "./checkout/Checkout"
 export { default as Home } from "./home/Home"
 export { default as Navigation } from "./navigation/Navigation"
