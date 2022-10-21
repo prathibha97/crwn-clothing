@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Button, FormInput } from '../../components'
 import {
-    createUserDocumentFromAuth,
     signInAuthUSerWithEmailAndPassword,
     signInWithGooglePopup
 } from '../../utils/firebase'
-import '../sign-up-form/SignUpForm.styles.scss'
+import { ButtonsContainer, SignUpContainer } from '../sign-up-form/SignUpForm.styles'
 
 const SignInForm = () => {
 
@@ -47,11 +46,11 @@ const SignInForm = () => {
     }
 
     const signInWithGoogle = async () => {
-        await signInWithGooglePopup() 
+        await signInWithGooglePopup()
     }
 
     return (
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Already have an account?</h2>
             <span>Sign in with yor email and password</span>
             <form onSubmit={handleSubmit}>
@@ -73,7 +72,7 @@ const SignInForm = () => {
                     onChange={handleChange}
                 />
 
-                <div className='buttons-container'>
+                <ButtonsContainer>
                     <Button type='submit'>
                         Sign In
                     </Button>
@@ -84,9 +83,9 @@ const SignInForm = () => {
                     >
                         Sign In With Google
                     </Button>
-                </div>
+                </ButtonsContainer>
             </form>
-        </div>
+        </SignUpContainer>
     )
 }
 

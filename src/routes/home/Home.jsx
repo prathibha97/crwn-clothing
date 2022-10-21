@@ -1,5 +1,4 @@
 import { Directory } from '../../components'
-import '../../components/directory/Directory.styles.scss'
 
 const Home = () => {
 
