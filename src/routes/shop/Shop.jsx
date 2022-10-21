@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { CategoriesPreview } from '../../routes'
+import { CategoriesPreview, Category } from '../../routes'
 import './Shop.styles.scss'
 
 const Shop = () => {
@@ -7,6 +7,7 @@ const Shop = () => {
     return (
         <Routes>
             <Route index element={<CategoriesPreview />} />
+            <Route path=':category' element={<Category />} />
         </Routes>
     )
 }
