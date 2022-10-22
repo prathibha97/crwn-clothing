@@ -65,7 +65,7 @@ const SignInForm = () => {
                 />
 
                 <FormInput
-                    label='Button'
+                    label='Password'
                     type='password'
                     required
                     name="password"
