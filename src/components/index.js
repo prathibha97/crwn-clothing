@@ -10,4 +10,5 @@ export { default as FormInput } from "./form-input/FormInput"
 export { default as ProductCard } from "./product-card/ProductCard"
 export { default as SignInForm } from "./sign-in-form/SignInForm"
 export { default as SignUpForm } from "./sign-up-form/SignUpForm"
+export { default as Spinner } from "./spinner/Spinner"
 

@@ -2,17 +2,20 @@ import { applyMiddleware, compose, legacy_createStore } from 'redux'
 import logger from 'redux-logger'
 import { persistReducer, persistStore } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import thunk from 'redux-thunk'
 import { rootReducer } from './rootReducer'
 
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['user'],
+    whitelist: ['cart'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const middleware = [process.env.NODE_ENV !== 'production' && logger].filter(Boolean)
+const middleware = [process.env.NODE_ENV !== 'production' && logger,
+    thunk
+].filter(Boolean)
 
 const composeEnhancers =
     (process.env.NODE_ENV !== 'production' &&
