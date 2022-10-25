@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { selectCartTotal } from '../../store/cart/cart.selector'
 import { selectCurrentUser } from '../../store/users/user.selector'
 import { BUTTON_TYPE_CLASSES } from '../button/Button'
-import Toast from '../toast/Toast'
 import { FormContainer, PaymentButton, PaymentFormContainer } from './PaymentForm.styles'
 
 const PaymentForm = () => {
