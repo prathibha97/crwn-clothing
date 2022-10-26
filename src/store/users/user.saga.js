@@ -6,7 +6,7 @@ import {
     signInAuthUSerWithEmailAndPassword,
     signInWithGooglePopup,
     signOutUser
-} from '../../utils/firebase'
+} from '../../utils/firebase/firebase'
 import { signInFailed, signInSuccess, signOutFailed, signOutSucess, signUpFailed, signUpSuccess } from './user.action'
 import { USER_ACTION_TYPES } from './user.types'
 
